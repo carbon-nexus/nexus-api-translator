@@ -1,0 +1,39 @@
+{
+  "name": "nexus-api-translator",
+  "version": "1.0.0",
+  "description": "Convert Postman collection to OpenAPI Specification, and vice versa",
+  "main": "dist/index.js",
+  "bin": {
+    "nexus-api-translator": "dist/index.js"
+  },
+  "scripts": {
+    "start": "npm run transpile && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbon-nexus/nexus-api-translator.git"
+  },
+  "keywords": [
+    "postman",
+    "openapi",
+    "open-api",
+    "api-contract"
+  ],
+  "author": "Jon McLean (jmclean-cnexus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbon-nexus/nexus-api-translator/issues"
+  },
+  "homepage": "https://github.com/carbon-nexus/nexus-api-translator#readme",
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "@types/node": "^14.14.8",
+    "@types/yargs": "^15.0.10",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "yargs": "^16.1.1"
+  }
+}
