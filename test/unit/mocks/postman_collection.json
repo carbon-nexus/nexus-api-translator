@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "adc6d14c-d998-4e71-8ff6-bd2d8f8adf39",
+		"name": "Mock",
+		"description": "A mock postman collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/user?firstName=Jane",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Jane"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/user",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"user"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "[\n\t{ \"id\": \"abcd-1234-efgh-5678\"}\n]"
+						}
+					]
+				},
+				{
+					"name": "Get User Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/user/:userId",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/user/abcd-1234-efgh-5678",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"abcd-1234-efgh-5678"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": \"abcd-1234-efgh-5678\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"dob\": \"01-01-1970\",\n    \"email\": \"jane.doe@carbon-nexus.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Jane\",\n\t\"lastName\": \"Doe\",\n\t\"dob\": \"01-01-1970\",\n\t\"email\": \"jane.doe@carbon-nexus.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/user",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"firstName\": \"Jane\",\n\t\"lastName\": \"Doe\",\n\t\"dob\": \"01-01-1970\",\n\t\"email\": \"jane.doe@carbon-nexus.com\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/user",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"user"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"id\": \"abcd-1234-efgh-5678\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"dob\": \"01-01-1970\",\n    \"email\": \"jane.doe@carbon-nexus.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Jane\",\n\t\"lastName\": \"Doe\",\n\t\"dob\": \"01-01-1970\",\n\t\"email\": \"jane.doe@carbon-nexus.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/user/:userId",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"firstName\": \"Jane\",\n\t\"lastName\": \"Doe\",\n\t\"dob\": \"01-01-1970\",\n\t\"email\": \"jane.doe@carbon-nexus.com\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/user/abcd-1234-efgh-5678",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"abcd-1234-efgh-5678"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": \"abcd-1234-efgh-5678\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"dob\": \"01-01-1970\",\n    \"email\": \"jane.doe@carbon-nexus.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/user/:userId",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/user/abcd-1234-efgh-5678",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"abcd-1234-efgh-5678"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"jane.doe@carbon-nexus.com\",\n\t\"password\": \"PlainJane1337\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUri}}/api/auth",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a14599b0-c53c-4a8f-b4a8-904372e03c42",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fccec024-f29d-4f0f-bf76-654dd30fe190",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "92684cf0-7183-40f7-b11d-3989df161117",
+			"key": "token",
+			"value": "sampleToken",
+			"type": "string"
+		},
+		{
+			"id": "f92c8092-4083-4b9c-9c50-6b946a6cfae9",
+			"key": "baseUri",
+			"value": "https://demo.carbon-nexus.com",
+			"type": "string"
+		}
+	]
+}
